@@ -33,7 +33,7 @@ const Navbar = () => {
         GuptKunji
         <span className="text-green-600">/&gt;</span>
       </h2>
-      {isAuthenticated && <h2 className="font-semibold mb-4 md:mb-0 md:text-sm ">
+      {isAuthenticated && <h2 className="font-semibold mb-4 text-sm md:mb-0 lg:text-2xl ">
         Welcome {user.name}
       </h2>}
       

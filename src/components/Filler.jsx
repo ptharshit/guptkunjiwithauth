@@ -145,93 +145,90 @@ const Filler = () => {
         </div>
 
         {passArray.length === 0 && <div>You have no passwords</div>}
-        {passArray.length != 0 && (
-          <div className="overflow-x-auto max-w-[90vw]">
-            <table className="table-auto w-[50%] lg:max-w-[80vh] min-w-[50%] lg:min-w-[80vh] border-collapse border border-green-800 overflow-hidden rounded-xl text-center bg-green-200   text-lg text-black">
+        {passArray.length !== 0 && (
+          <div className="overflow-x-auto max-w-[90vw] mt-4">
+            <table className="table-auto w-full border-collapse border border-green-800 rounded-xl text-center bg-green-200 text-lg text-black">
               <thead className="bg-green-500 text-white font-extrabold">
                 <tr>
-                  <th className=" px-4 py-2">Site</th>
-                  <th className=" px-4 py-2">UserName</th>
-                  <th className=" px-4 py-2">PassWord</th>
-                  <th className=" px-4 py-2">Actions</th>
+                  <th className="px-4 py-2">Site</th>
+                  <th className="px-4 py-2">Username</th>
+                  <th className="px-4 py-2">Password</th>
+                  <th className="px-4 py-2">Actions</th>
                 </tr>
               </thead>
-              <tbody className="text-black">
-                {passArray.map((item, index) => {
-                  return (
-                    <tr key={item.id}>
-                      <td className=" px-4 py-2">
-                        <div className="flex justify-center items-center">
-                          <a target="_blank" href={item.site}>
-                            {item.site}
-                          </a>
-                          <lord-icon
-                            onClick={(e) => {
-                              e.stopPropagation(); // Stop event propagation
-                              copyy(item.site);
-                            }}
-                            src="https://cdn.lordicon.com/rnxtcirm.json"
-                            trigger="hover"
-                            colors="primary:#121331,secondary:#66ee78,tertiary:#606874"
-                            style={{ cursor: "pointer" }}
-                          ></lord-icon>
-                        </div>
-                      </td>
-                      <td className=" px-4 py-2">
-                        <div className="flex justify-center items-center">
-                          {item.username}
-                          <lord-icon
-                            onClick={(e) => {
-                              e.stopPropagation(); // Stop event propagation
-                              copyy(item.username);
-                            }}
-                            src="https://cdn.lordicon.com/rnxtcirm.json"
-                            trigger="hover"
-                            colors="primary:#121331,secondary:#66ee78,tertiary:#606874"
-                            // style={{"margin-top":"2px"}}
-                            style={{ cursor: "pointer" }}
-                          ></lord-icon>
-                        </div>
-                      </td>
-                      <td className=" px-4 py-2">
-                        <div className="flex justify-center items-center ">
-                          {"*".repeat(item.password.length)}
-                          <lord-icon
-                            onClick={(e) => {
-                              e.stopPropagation(); // Stop event propagation
-                              copyy(item.password);
-                            }}
-                            src="https://cdn.lordicon.com/rnxtcirm.json"
-                            trigger="hover"
-                            colors="primary:#121331,secondary:#66ee78,tertiary:#606874"
-                            style={{ cursor: "pointer" }}
-                          ></lord-icon>
-                        </div>
-                      </td>
-                      <td className="flex gap-3 justify-center items-center">
+              <tbody>
+                {passArray.map((item) => (
+                  <tr key={item.id}>
+                    <td className="px-4 py-2">
+                      <div className="flex justify-center items-center gap-2">
+                        <a href={item.site} target="_blank" rel="noopener noreferrer">
+                          {item.site}
+                        </a>
                         <lord-icon
-                          onClick={() => {
-                            editRow(item.id);
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            copyToClipboard(item.site);
                           }}
-                          src="https://cdn.lordicon.com/wuvorxbv.json"
+                          src="https://cdn.lordicon.com/rnxtcirm.json"
                           trigger="hover"
-                          stroke="bold"
-                          state="hover-line"
+                          colors="primary:#121331,secondary:#66ee78,tertiary:#606874"
                           style={{ cursor: "pointer" }}
                         ></lord-icon>
+                      </div>
+                    </td>
+                    <td className="px-4 py-2">
+                      <div className="flex justify-center items-center gap-2">
+                        {item.username}
                         <lord-icon
-                          onClick={() => {
-                            deleteRow(item.id);
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            copyToClipboard(item.username);
                           }}
-                          src="https://cdn.lordicon.com/hjbrplwk.json"
+                          src="https://cdn.lordicon.com/rnxtcirm.json"
                           trigger="hover"
-                          colors="primary:#646e78,secondary:#6c16c7,tertiary:#ebe6ef,quaternary:#3a3347"
+                          colors="primary:#121331,secondary:#66ee78,tertiary:#606874"
                           style={{ cursor: "pointer" }}
                         ></lord-icon>
-                      </td>
-                    </tr>
-                  );
-                })}
+                      </div>
+                    </td>
+                    <td className="px-4 py-2">
+                      <div className="flex justify-center items-center gap-2">
+                        {"*".repeat(item.password.length)}
+                        <lord-icon
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            copyToClipboard(item.password);
+                          }}
+                          src="https://cdn.lordicon.com/rnxtcirm.json"
+                          trigger="hover"
+                          colors="primary:#121331,secondary:#66ee78,tertiary:#606874"
+                          style={{ cursor: "pointer" }}
+                        ></lord-icon>
+                      </div>
+                    </td>
+                    <td className="flex gap-3 justify-center items-center px-4 py-2">
+                      <lord-icon
+                        onClick={() => {
+                          editRow(item.id);
+                        }}
+                        src="https://cdn.lordicon.com/wuvorxbv.json"
+                        trigger="hover"
+                        stroke="bold"
+                        state="hover-line"
+                        style={{ cursor: "pointer" }}
+                      ></lord-icon>
+                      <lord-icon
+                        onClick={() => {
+                          deleteRow(item.id);
+                        }}
+                        src="https://cdn.lordicon.com/hjbrplwk.json"
+                        trigger="hover"
+                        colors="primary:#646e78,secondary:#6c16c7,tertiary:#ebe6ef,quaternary:#3a3347"
+                        style={{ cursor: "pointer" }}
+                      ></lord-icon>
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
