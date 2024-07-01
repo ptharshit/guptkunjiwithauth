@@ -167,7 +167,7 @@ const Filler = () => {
                         <lord-icon
                           onClick={(e) => {
                             e.stopPropagation();
-                            copyToClipboard(item.site);
+                            copyy(item.site);
                           }}
                           src="https://cdn.lordicon.com/rnxtcirm.json"
                           trigger="hover"
@@ -182,7 +182,7 @@ const Filler = () => {
                         <lord-icon
                           onClick={(e) => {
                             e.stopPropagation();
-                            copyToClipboard(item.username);
+                            copyy(item.username);
                           }}
                           src="https://cdn.lordicon.com/rnxtcirm.json"
                           trigger="hover"
@@ -197,7 +197,7 @@ const Filler = () => {
                         <lord-icon
                           onClick={(e) => {
                             e.stopPropagation();
-                            copyToClipboard(item.password);
+                            copyy(item.password);
                           }}
                           src="https://cdn.lordicon.com/rnxtcirm.json"
                           trigger="hover"
