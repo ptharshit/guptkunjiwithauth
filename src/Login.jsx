@@ -13,7 +13,7 @@ const Login = () => {
       <div className="  h-[79vh] flex justify-center items-center  gap-x-72">
         <div className=" hover: p-10 bg-white rounded-2xl">
           <img
-            className=" h-96 w-80 rounded-2xl"
+            className=" h-96 w-80 rounded-2xl cursor-pointer"
             src="./src/images/img.jpg"
             alt="Ram Ram bhai"
           />
@@ -25,7 +25,7 @@ const Login = () => {
             className=" bg-gray-900 text-4xl text-green-500 font-mono font-bold p-5 rounded-2xl"
           >
             {" "}
-            &lt;Join us/&gt;
+            &lt;Join Me/&gt;
           </button>
         </div>
       </div>

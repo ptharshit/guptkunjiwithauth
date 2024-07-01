@@ -24,7 +24,7 @@ const Filler = () => {
     }
   }, []);
 
-  const ref = useRef();
+  // const ref = useRef();
   const changePassIcon = (e) => {
     setshowPass(!showPass);
   };
@@ -195,7 +195,7 @@ const Filler = () => {
                       </td>
                       <td className=" px-4 py-2">
                         <div className="flex justify-center items-center ">
-                          {item.password}
+                          {"*".repeat(item.password.length)}
                           <lord-icon
                             onClick={(e) => {
                               e.stopPropagation(); // Stop event propagation
