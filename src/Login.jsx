@@ -14,12 +14,12 @@ const Login = () => {
         <div className=" hover: p-10 bg-white rounded-2xl">
           <img
             className=" h-96 w-80 rounded-2xl cursor-pointer"
-            src="./src/images/img.jpg"
+            src="/img.jpg"
             alt="Ram Ram bhai"
           />
         </div>
         <div className="flex flex-col justify-center items-center gap-5 h-screen">
-          <img className=" w-72 h-72 " src="./src/images/logo.gif" alt="" />
+          <img className=" w-72 h-72 " src="/logo.gif" alt="" />
           <button
             onClick={() => loginWithRedirect()}
             className=" bg-gray-900 text-4xl text-green-500 font-mono font-bold p-5 rounded-2xl"
